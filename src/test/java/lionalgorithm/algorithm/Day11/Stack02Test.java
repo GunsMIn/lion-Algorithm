@@ -4,16 +4,19 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.EmptyStackException;
+import java.util.Stack;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class Stack02Test {
     Stack02 st = new Stack02();
 
-    @BeforeEach
+   /* @BeforeEach
     void setUp() {
         st.push(10);
         st.push(20);
-    }
+    }*/
 
     @Test
     void push() {
@@ -32,13 +35,34 @@ class Stack02Test {
         assertTrue(st.isEmpty());
     }
 
-
-   /* @Test
+    //예외 테스트
+    @Test
     void pushAndPop() {
 
         Stack02 st = new Stack02();
         st.push(10);
         st.push(20);
         assertEquals(20,st.pop());
-    }*/
+        assertEquals(10,st.pop());
+
+        //예외 테스트
+        assertThrows(RuntimeException.class,() ->{
+            st.pop();
+        });
+    }
+
+    //peek테스트
+    @Test
+    void peek() {
+
+        Stack02 st = new Stack02();
+        assertThrows(RuntimeException.class,() ->{
+            st.peek();
+        });
+        st.push(10);
+        int peeked = st.peek();
+        assertEquals(10,peeked);
+    }
+
+
 }

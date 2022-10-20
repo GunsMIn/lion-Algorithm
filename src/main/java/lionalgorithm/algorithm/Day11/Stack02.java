@@ -1,5 +1,7 @@
 package lionalgorithm.algorithm.Day11;
 
+import java.util.EmptyStackException;
+
 public class Stack02 {
 
     private Integer[] arr; // int[] 0
@@ -26,7 +28,7 @@ public class Stack02 {
         if (this.isEmpty()) {
             throw new RuntimeException("스택이 비어있습니다");
         }
-        return this.arr[--top];// this.top = 2
+        return arr[--top];// this.top = 2
     }
 
     public boolean isEmpty() {
@@ -34,6 +36,10 @@ public class Stack02 {
     }
 
 
-
-
+    public int peek() {
+        if (this.isEmpty()) {
+            throw new RuntimeException("스택이 비어있습니다");
+        }
+        return arr[top];
+    }
 }
