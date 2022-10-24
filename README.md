@@ -5,6 +5,7 @@
 <hr>
 <b>📝파일명 : 프로젝트 진행 내용</b><br>
 - day11 :Stack 메소드 직접 구현, test코드 Junit사용 <br>
+- day12 :정렬 Arrays.sort()를 이용한 알고리즘 <br>
 
 <hr>
 <b>🎈학습 내용</b><br>
