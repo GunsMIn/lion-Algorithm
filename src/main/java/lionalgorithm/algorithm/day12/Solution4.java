@@ -23,7 +23,7 @@ public class Solution4 {
                     q.offer(truck);
                     answer++;
                     sum += truck;
-                    break;
+                    break;//여기서 break는 다음 트럭을 진행시키는 것이다.
                 }else{ // 다리에 트럭이 존재할 때
                     if (q.size() == bridge_length) {
                         sum -= q.poll();
