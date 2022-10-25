@@ -1,6 +1,6 @@
 # lion-Algorithm
 멋쟁이사자처럼 알고리즘
-# ✨java_STUDY
+# ✨Algorithm_STUDY
 ✔멋쟁이사자 알고리즘 학습 관련 레파지토리입니다.✔
 <hr>
 <b>📝파일명 : 프로젝트 진행 내용</b><br>
