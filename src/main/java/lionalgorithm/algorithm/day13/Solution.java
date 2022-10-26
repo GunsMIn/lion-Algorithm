@@ -22,9 +22,6 @@ class Solution {
                 answer += key;
             }
         }
-
-
-
         return answer;
     }
 }
