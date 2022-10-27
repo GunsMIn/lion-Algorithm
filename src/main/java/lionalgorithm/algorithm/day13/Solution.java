@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 class Solution {
+    //프로그머스 완주하지못한 선수
     public String solution(String[] participant, String[] completion) {
         String answer = "";
         Map<String,Integer> map = new HashMap<>();
