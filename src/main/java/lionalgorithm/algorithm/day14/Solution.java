@@ -5,6 +5,8 @@ import java.util.Stack;
 
 public class Solution {
 
+    //https://school.programmers.co.kr/learn/courses/30/lessons/42584
+
     public int[] solution(int[] prices) {
         int[] answer = new int[prices.length];
 
