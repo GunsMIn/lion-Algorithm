@@ -3,9 +3,10 @@ package lionalgorithm.algorithm.day15;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Solution1 {
+public class Solution2 {
 
-    //https://school.programmers.co.kr/learn/courses/13577/lessons/96091
+
+//https://school.programmers.co.kr/learn/courses/13577/lessons/96091
 
     public boolean solution(String[] phone_book) {
         boolean answer = true;
