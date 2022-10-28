@@ -7,6 +7,7 @@
 - day11 :Stack 메소드 직접 구현, test코드 Junit사용 <br>
 - day12 :정렬 Arrays.sort()를 이용한 알고리즘 <br>
 - day13 :Hash 직접 구현 , HashMap의 getOrDefault()메소드를 이용한 count 적용<br>
+- day14 :완전탐색 알골리즘 - > 어떠한 경우에는 하나하나 따져보는게 좋다<br>
 
 <hr>
 <b>🎈학습 내용</b><br>
