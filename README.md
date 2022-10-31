@@ -9,6 +9,7 @@
 - day13 :Hash 직접 구현 , HashMap의 getOrDefault()메소드를 이용한 count 적용<br>
 - day14 :완전탐색 알골리즘 - > 어떠한 경우에는 하나하나 따져보는게 좋다<br>
 - day15 :해싱처리를 이용한 알고리즘 풀이 + <br>
+- day15 : 10진법을 N진법으로 + SET을 이용한 중복제거 / stream().sorted.mapToInt(Integer::intvalue).toArray 스트림 사용 <br>
 <hr>
 <b>🎈학습 내용</b><br>
 <b>- test코드</b> :ttd를 작성할 때 예외 테스트부터 해주자!<br>
