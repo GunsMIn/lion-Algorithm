@@ -11,23 +11,26 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        int n = 50;
+        int N = 50;
+        List<Integer> nums = new ArrayList<>();
 
-        int[] prime = new int[n + 1];
-        for (int i = 0; i < prime.length; i++) {
-            prime[i]=i;
+        for (int i = 2; i <=N ; i++) {
+                nums.add(i);
         }
-        System.out.println("prime = " + Arrays.toString(prime));
+        System.out.println("nums = " + nums);
 
 
-        //리스트에서 2를 제외한 모든 2의 배수 지우기
-        for (int i = 2; i < n; i++) {
-            if(i==2)continue;
-            for (int j = i * i; j < n; j += i) {
-                prime[i]=0;
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums.get(i) % 2 == 0 && nums.get(i)> 2) {
+                nums.remove(i);
             }
         }
-        System.out.println("prime = " + Arrays.toString(prime));
+        //람다식사용시
+      /*  nums.removeIf(n -> n % 2 == 0 && n > 2);*/
+
+        System.out.println("nums = " + nums);
+
+
 
     }
 }
