@@ -3,8 +3,6 @@ package lionalgorithm.algorithm.day19;
 import java.util.Arrays;
 
 public class Soltuion3 {
-
-
     public int solution(int n, int[] lost, int[] reserve) {
         int answer = 0;
         //student 배열을 n+2로만들어주자 앞 뒤를 비교해야하기때문이다.
@@ -28,6 +26,8 @@ public class Soltuion3 {
             }
         }
         System.out.println("Arrays.toString(student) = " + Arrays.toString(student));
+        //여기서도 주의해야함 !
+        // index =0 || n+1 은 내가 일부러 만들어 준 배열!
         for (int i = 1; i <= n ; i++) {
             if (student[i] >= 0) {
                 answer++;
@@ -36,5 +36,40 @@ public class Soltuion3 {
         return answer;
     }
 
+
+    public int solution3(int n, int[] lost, int[] reserve) {
+        int answer = 0;
+        //1. 배열의 앞뒤를 비교해야 한다.
+        //2. 도난 당한 학생은 -1을 연산 줄것
+        //3. 여분이 있는 사람은 1을 연산해 줄 것
+        int[] student = new int[n+2];
+        // 0 * 0 0 0 0 0 * 0
+        for (int r : reserve) {
+            student[r]++;
+        }
+        for (int l : lost) {
+            student[l]--;
+        }
+        //
+        for (int i = 0; i < student.length; i++) {
+            if (student[i] == 1) {
+                if (student[i - 1] == -1) {
+                    student[i-1]++;
+                    student[i]--;
+                } else if (student[i + 1] == -1) {
+                    student[i+1]++;
+                    student[i]--;
+                }
+            }
+        }
+
+        for (int i : student) {
+            if (i >= 0) {
+                answer++;
+            }
+        }
+
+        return answer;
+    }
 
 }
