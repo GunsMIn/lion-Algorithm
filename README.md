@@ -20,7 +20,8 @@
 - day15 : 10진법을 N진법으로 + SET을 이용한 중복제거 / stream().sorted.mapToInt(Integer::intvalue).toArray 스트림 사용 <br>
 - day16 : 완전 탐색알고리즘 + 키패드 누르기 Math.abs를 이용한 거리 구하기
 - day17 : 중복되는 요소 탬플릿 콜백 패턴을 이용하여 구현
-- day18 : 소수 찾기 에라토스테네스 체 알고리즘 
+- day18 : 소수 찾기 에라토스테네스 체 알고리즘
+- day21 : PriorityQueue 자료구조를 이용한 알고리즘 (일반 큐구조와는 다르게 우선순위가 높은 순으로 추출되는 자료구조) 
 <hr>
 <b>🎈학습 내용</b><br>
 <b>- test코드</b> :ttd를 작성할 때 예외 테스트부터 해주자!<br>
