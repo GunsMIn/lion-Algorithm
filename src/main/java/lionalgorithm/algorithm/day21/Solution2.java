@@ -19,10 +19,10 @@ public class Solution2 {
             }
         }
         if (list.isEmpty()) {
-            return new int[-1];
+            list.add(-1);
         }
-        list.stream().sorted(Comparator.naturalOrder());
-        return list.stream().mapToInt(Integer::intValue).toArray();
+
+        return  list.stream().sorted(Comparator.naturalOrder()).mapToInt(Integer::intValue).toArray();
 
     }
 }
