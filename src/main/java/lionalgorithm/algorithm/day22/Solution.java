@@ -1,5 +1,7 @@
 package lionalgorithm.algorithm.day22;
 
+import java.util.Arrays;
+
 public class Solution {
     //https://codeup.kr/problem.php?id=3001
     //단순 탐색
@@ -7,7 +9,8 @@ public class Solution {
 
     public int soltution(int n, int[] arr,int want) {
         int answer = 0;
-        arr = new int[n];
+       
+        System.out.println(Arrays.toString(arr));
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == want) {
                 answer = i+1;
