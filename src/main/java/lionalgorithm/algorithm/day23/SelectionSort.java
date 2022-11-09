@@ -22,6 +22,22 @@ public class SelectionSort {
         return arr;
     }
 
+    //내림 차순
+    public int[] solution2(int[] arr) {
+        int max = Integer.MIN_VALUE;
+        int tmp = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                if (max < arr[j]) {
+                    tmp = arr[j];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                }
+            }
+        }
+        return arr;
+    }
+
 
 
 }
