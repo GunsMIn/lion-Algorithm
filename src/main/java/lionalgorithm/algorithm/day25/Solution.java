@@ -8,15 +8,17 @@ public class Solution {
     public int[] solution(int []arr) {
 
         Stack<Integer> stack = new Stack<>();
+        //나중에 stack에서 peek를 하기 위함
         stack.push(arr[0]);
-
         for (int i = 1; i < arr.length; i++) {
             if (stack.peek() != arr[i]) { // 앞 뒤가 같지 않는 숫자 일때 stack에 넣어주자
                 stack.push(arr[i]);
             }
         }
-
         int[] answer = new int[stack.size()];
+        for (int i = 0; i < stack.size(); i++) {
+            answer[i] = stack.get(i);
+        }
         return answer;
     }
 }
