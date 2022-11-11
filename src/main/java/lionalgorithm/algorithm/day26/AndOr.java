@@ -34,12 +34,21 @@ public class AndOr {
 
 
     public String[] solution(int n, int[] arr1, int[] arr2) {
-        String[] answer = {};
+        String[] answer = new String[n];
         //1.10진수를 2진수로 우선바꾸자
         for (int i = 0; i < n ; i++) {
-            String string = Integer.toBinaryString(arr1[i] | arr2[i]);
+            answer[i] = Integer.toBinaryString(arr1[i] | arr2[i]);
+            answer[i] = answer[i].replaceAll("1", "#");
+            answer[i] = answer[i].replaceAll("0", " ");
+            //그럼 여기서 기호로 바꿔주었다
+            //이진수 변환시 1은 00001이 아닌 1이다
+            //비트 연산 뒤에도 n길이가 되지 않는 경우가 발생할 수 있다
+            while(answer[i].length() < n) {
+                answer[i] = " " + answer[i];
+            }
 
         }
+
 
 
         return answer;
