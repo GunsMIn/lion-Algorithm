@@ -1,4 +1,4 @@
-package day27;
+package lionalgorithm.algorithm.day27;
 
 public class Eratosthenes {
 
