@@ -13,6 +13,16 @@ public class Solution {
         char[] chars = s.toCharArray();
         for (char c : chars) { // c는 문자 하나하나이다.
             if(c==32) answer += " ";
+            else{
+                if (c >= 65 && c <= 90) {
+                    c += n;
+                    if (c>90) c -= 26;
+                } else if (c >= 97 && c <= 122) {
+                    c += n;
+                    if (c>122) c -= 26;
+                }
+                answer += c;
+            }
         }
 
 
