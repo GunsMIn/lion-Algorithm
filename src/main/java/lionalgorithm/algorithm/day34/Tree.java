@@ -26,8 +26,8 @@ public class Tree {
 
 
     public static void main(String[] args) {
-        int i = goUp(3, 4);
-        System.out.print(i);
+        int distance = goUp(3, 4);
+        System.out.print(distance);
 
       /*  int a = 3;
         int b = 4;
