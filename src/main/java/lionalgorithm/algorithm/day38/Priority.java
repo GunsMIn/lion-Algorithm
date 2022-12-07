@@ -3,6 +3,25 @@ package lionalgorithm.algorithm.day38;
 import java.util.PriorityQueue;
 
 public class Priority {
+
+    public int solution(int[] scoville, int k) {
+        int answer = 0; // count
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> a - b);
+        //우선 순위 큐에 값 넣기
+        for (int s : scoville) {
+            pq.add(s);
+        }
+        while (pq.peek() < k) {
+            int firstValue = pq.poll();
+            int secondValue = pq.poll();
+            int mix = firstValue + secondValue;
+            answer ++;
+        }
+
+        return answer;
+    }
+
+
     public static void main(String[] args) {
         PriorityQueue<Integer> pq = new PriorityQueue<>((a,b) -> a-b);
         int[] arr = {1, 2, 3, 9, 10, 12};
