@@ -11,18 +11,18 @@ public class Priority {
         for (int s : scoville) {
             pq.add(s);
         }
-        if(pq.size()<=1) return 0;
+
         //모든 음식의 스코빌 지수를 K 이상으로 만든다
         while (pq.peek() < K) {
-            System.out.println("pq.peek() = " + pq.peek());
+            //런타임 에러가 발생 했던이유는 1개 밖에 없는데 2개를 poll하려고 했기 때문이다.
+            if(pq.size()<=1) return -1;
             int firstValue = pq.poll();
             int secondValue = pq.poll();
-            System.out.println("firstValue = " + firstValue);
-            System.out.println("secondValue = " + secondValue);
             int mix = firstValue + (secondValue*2);
             pq.offer(mix);
             answer ++;
         }
+
         System.out.println("pq = " + pq);
         return answer;
     }
