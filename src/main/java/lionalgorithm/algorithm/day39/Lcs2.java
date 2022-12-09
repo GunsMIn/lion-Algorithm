@@ -4,13 +4,12 @@ public class Lcs2 {
     public static void main(String[] args) {
         /**keyPoint : 달랐을 때는 현재 위치를 기준으로 왼쪽의 값과, 위쪽의 값 중 더 큰 값을 가져온다.
          *            주의할 점은 같은 문자열이  연속해서 나오면 ? **/
-       
         /** 찾아낸 규칙
          * 1.문자열을 비교하여 같았을 때
-          현재 칸에 들어갈 값은 대각선 왼쪽 위의 값 + 1 이다.
+          현재 칸에 들어갈 값은 대각선 왼쪽 위의 값 + 1 이다. 대각선은 dp[i-1][j-1]
           2.문자열을 비교하여 달랐을 때
           현재 칸에 들어갈 값은 왼쪽과 위쪽의 값 중 더 큰 값이 들어간다.**/
-        // A B C D C B A
+          // A B C D C B A
         //D  0 0 0 1 1 1 1
         //C  0 0 1 1 2 2 2
         //A  1 1 1 1 2 2 2
@@ -30,8 +29,13 @@ public class Lcs2 {
                 System.out.printf("i:%s j:%s\n",str2.charAt(i), str1.charAt(j));
                 // 두개가 연속해서 같으면 대각선에서 가지고 온다
                 // 대각선은 dp[i-1][j-1]
-
+                if (str2.charAt(i) == str1.charAt(j)) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                }
                 // 두개가 다르면 max(위,왼쪽)을 기록한다.
+                else{
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
             }
         }
 
