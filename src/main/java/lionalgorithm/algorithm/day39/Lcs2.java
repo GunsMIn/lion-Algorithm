@@ -1,5 +1,7 @@
 package lionalgorithm.algorithm.day39;
 
+import java.util.Arrays;
+
 public class Lcs2 {
     public static void main(String[] args) {
         /**keyPoint : 달랐을 때는 현재 위치를 기준으로 왼쪽의 값과, 위쪽의 값 중 더 큰 값을 가져온다.
@@ -26,19 +28,25 @@ public class Lcs2 {
 
         for (int i = 1; i < str2.length(); i++) {
             for (int j = 1; j < str1.length(); j++) {
-                System.out.printf("i:%s j:%s\n",str2.charAt(i), str1.charAt(j));
+                //System.out.printf("i:%s j:%s\n",str2.charAt(i), str1.charAt(j));
                 // 두개가 연속해서 같으면 대각선에서 가지고 온다
                 // 대각선은 dp[i-1][j-1]
-                if (str2.charAt(i) == str1.charAt(j)) {
+                if (i == 0 || j == 0) {
+                    dp[i][j] = 0;
+                }
+                else if (str2.charAt(i-1) == str1.charAt(j-1)) {
                     dp[i][j] = dp[i - 1][j - 1] + 1;
                 }
                 // 두개가 다르면 max(위,왼쪽)을 기록한다.
                 else{
-                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                    int up = dp[i - 1][j];
+                    int left = dp[i][j-1];
+                    dp[i][j] = Math.max(up, left);
                 }
             }
+            System.out.println(Arrays.toString(dp[i]));
         }
-
+         int answer = dp[str2.length()][str1.length()];
 
     }
 }
