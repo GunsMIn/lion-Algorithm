@@ -32,4 +32,26 @@ public class Solution {
         }
         return answer;
     }
+
+    public int[] solution2(int k, int[] score) {
+        int[] answer = new int[score.length]; // 매일매일의 최소값이 들어갈 answer배열
+        //명예의 전당에 들어갈 list구조
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < score.length; i++) {
+            if (list.size() < k) {
+                list.add(score[i]);
+                Collections.sort(list);
+                answer[i] = list.get(0);
+            }else{
+                int minValue = list.get(0);
+                if (score[i] > minValue) {
+                    list.remove(0);
+                    list.add(score[i]);
+                    Collections.sort(list);
+                }
+                answer[i] = list.get(0);
+            }
+        }
+        return answer;
+    }
 }
