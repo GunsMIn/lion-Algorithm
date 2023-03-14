@@ -15,7 +15,7 @@ public class QuickSort {
     //상호 교대 후, 다음 값을 가리키기 위해 두 인덱스를 각자 진행 방향으로 한 칸씩 이동 시킵니다.
     //두 인덱스가 서로 교차해서 지나치게 되어 while 루프를 빠져나왔다면 다음 재귀 호출의 분할 기준점이될 시작 인덱스를 리턴합니다.
 
-    public List<Integer> merge(List<Integer> left,List<Integer> mid,List<Integer> right) {
+    public List<Integer> merge(List<Integer> left, List<Integer> mid, List<Integer> right) {
         //answer로 하나로 합쳐주자
         List<Integer> answer = new ArrayList<>();
         answer.addAll(left);
@@ -26,6 +26,8 @@ public class QuickSort {
 
     public List<Integer> sort(List<Integer> arr) {
         // 1. 기준값을 뽑는 로직 구현
+        if (arr.size() <= 1) return arr;
+
         int pivot = arr.get(arr.size() / 2);
         System.out.println("pivot = " + pivot);
         List<Integer> left = new ArrayList<>();
@@ -33,14 +35,12 @@ public class QuickSort {
         List<Integer> right = new ArrayList<>();
 
         for (int i = 0; i < arr.size(); i++) {
-            if(pivot > arr.get(i)) left.add(arr.get(i));
-            else if(pivot < arr.get(i)) right.add(arr.get(i));
+            if (pivot > arr.get(i)) left.add(arr.get(i));
+            else if (pivot < arr.get(i)) right.add(arr.get(i));
             else mid.add(arr.get(i));
         }
-        System.out.println("left = " + left);
-        System.out.println("right = " + right);
         //list를 합치는 연산
-        return merge(sort(left) ,sort(mid) , sort(right));
+        return merge(sort(left), mid, sort(right));
     }
 
 

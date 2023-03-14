@@ -1,6 +1,7 @@
 package lionalgorithm.algorithm.day16;
 
 import java.util.*;
+
 //두 개 뽑아서 더하기
 public class Solution4 {
 
@@ -17,9 +18,9 @@ public class Solution4 {
         //3+4
         Arrays.sort(numbers);
         Set<Integer> ans = new HashSet<>();
-        for (int i = 0; i < numbers.length-1; i++) {
-            for (int j = i+1; j < numbers.length ; j++) {
-               ans.add(numbers[i] + numbers[j]);
+        for (int i = 0; i < numbers.length - 1; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                ans.add(numbers[i] + numbers[j]);
             }
         }
         System.out.println(ans);
@@ -31,7 +32,7 @@ public class Solution4 {
     public static void main(String[] args) {
 
         Solution4 s = new Solution4();
-        int[] a = {5,0,2,7};
+        int[] a = {5, 0, 2, 7};
         s.solution(a);
     }
 }

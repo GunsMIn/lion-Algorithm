@@ -8,7 +8,7 @@ public class Solution2 {
         int[] answer = new int[2];
         //우선 brown과 yellow를 더하자
         int sum = brown + yellow;
-       //2.가로와 세로는 반드시 3이상이어야한다
+        //2.가로와 세로는 반드시 3이상이어야한다
         for (int i = 3; i < sum; i++) {
             int sero = i;
             int garo = sum / sero;
@@ -29,8 +29,10 @@ public class Solution2 {
         int sum = brown + yellow;
         for (int i = 3; i < sum; i++) {
             int garo = i;
-            int  sero = sum / garo;
-            if(sero > garo){continue;}
+            int sero = sum / garo;
+            if (sero > garo) {
+                continue;
+            }
             if ((garo - 2) * (sero - 2) == yellow) {
                 answer[0] = garo;
                 answer[1] = sero;
@@ -40,8 +42,6 @@ public class Solution2 {
 
         return answer;
     }
-
-
 
 
 }

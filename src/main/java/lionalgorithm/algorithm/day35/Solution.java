@@ -42,7 +42,7 @@ public class Solution {
                 list.add(score[i]);
                 Collections.sort(list);
                 answer[i] = list.get(0);
-            }else{
+            } else {
                 int minValue = list.get(0);
                 if (score[i] > minValue) {
                     list.remove(0);

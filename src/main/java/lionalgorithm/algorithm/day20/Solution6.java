@@ -8,7 +8,7 @@ public class Solution6 {
      * 두 수 a, b  를 20과 12로 잡아보면.a 를 b로 나눈 나머지 8을 N 으로 둔다면  a = 12 , b = 8이 됩니다.
      * 계속해서 이는 곧   a = 8  ( 이전의 b ) ,   b =  4 ( 12를 8로 나눈 나머지 )
      * 마지막으로 a = 4, b = 0 이 되고 ,b가 0이 될 때의 a값 ( = 4 ) 이 두 수의 최대 공약수이다.
-     * */
+     */
     public int[] solution(int n, int m) {
 
         int max = Math.max(n, m);

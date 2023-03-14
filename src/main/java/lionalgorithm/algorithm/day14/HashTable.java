@@ -5,14 +5,13 @@ import java.util.List;
 
 public class HashTable {
 
-
-
-
     private int size = 10000;
 
     List<Node>[] table = new ArrayList[1000];
 
-    public HashTable() {;}
+    public HashTable() {
+        ;
+    }
 
     public HashTable(int size) {
         this.size = size;
@@ -41,7 +40,6 @@ public class HashTable {
 
     public Integer get(String key) {
         List<Node> nodes = this.table[hash(key)];
-
         for (Node node : nodes) {
             if (key.equals(node.getKey())) {
                 return node.getValue();
@@ -51,9 +49,7 @@ public class HashTable {
     }
 
 
-
-
-    class Node{
+    class Node {
         String key;
         Integer value;
 
@@ -72,12 +68,8 @@ public class HashTable {
     }
 
 
-
-
-
-
     public static void main(String[] args) {
-       //학생들의 영어 이름
+        //학생들의 영어 이름
         String[] names = new String[]{"DongyeonKang",
                 "SubinKang", "KwanwunKo", "HyunseokKo", "KyoungdukKoo", "YeonjiGu", "SoyeonKown", "OhsukKwon", "GunwooKim", "KiheonKim",
                 "NayeongKim", "DohyeonKim", "MinkyoungKim", "MinjiKim", "SanghoKim", "SolbaeKim", "YejinKim", "EungjunKim", "JaegeunKim",
@@ -90,16 +82,13 @@ public class HashTable {
 
 
         HashTable ht = new HashTable(200);
-        ht.insert("suk",1);
-        ht.insert("kus",2);
+        ht.insert("suk", 1);
+        ht.insert("kus", 2);
         if (ht.get("suk") == 1) {
             System.out.println("테스트 성공");
-        }else{
+        } else {
             System.out.println("테스트 실패");
         }
-
-
-
 
 
         //아스키코드의 총합의 중복을 제거하기위해서
@@ -110,8 +99,6 @@ public class HashTable {
         }
                                   //총이름수,중복된것을 거른것의 size
         System.out.printf("%s %s",names.length,nameSet.size());*/
-
-
 
 
     }

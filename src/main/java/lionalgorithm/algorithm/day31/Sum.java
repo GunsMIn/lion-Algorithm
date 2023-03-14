@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class Sum {
     //1~n의 합구하기 재귀함수
     public int sum(int num) {
-        if (num==0) return num; // num이 0일때 0 리턴
+        if (num == 0) return num; // num이 0일때 0 리턴
         return num + sum(num - 1);
     }
 

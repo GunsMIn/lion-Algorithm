@@ -10,7 +10,7 @@ public class ListSum {
 
     //리스트의 합 재귀로 구하기
     public static int sum(List<Integer> nums) {
-        if(nums.isEmpty()) return 0;
+        if (nums.isEmpty()) return 0;
         int each = nums.remove(nums.size() - 1);
         return each + sum(nums);
     }

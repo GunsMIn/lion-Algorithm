@@ -5,10 +5,11 @@ import java.util.Iterator;
 import java.util.Map;
 
 class Solution {
+
     //프로그머스 완주하지못한 선수
     public String solution(String[] participant, String[] completion) {
         String answer = "";
-        Map<String,Integer> map = new HashMap<>();
+        Map<String, Integer> map = new HashMap<>();
         // 우선 참여자들 모두 1의 값을 넣어줄 것이다.
         for (String person : participant) {
             map.put(person, map.getOrDefault(person, 0) + 1); // 그러면 각각 1 들어감
@@ -17,7 +18,6 @@ class Solution {
         for (String complete : completion) {
             map.put(complete, map.get(complete) - 1);
         }
-
         for (String key : map.keySet()) {
             if (map.get(key) == 1) {
                 answer += key;
@@ -25,4 +25,5 @@ class Solution {
         }
         return answer;
     }
+
 }

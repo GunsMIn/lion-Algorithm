@@ -21,8 +21,8 @@ class Stack02Test {
     @Test
     void push() {
         Integer[] arr = st.getArr();
-        assertEquals(20,arr[1]);
-        assertEquals(10,arr[0]);
+        assertEquals(20, arr[1]);
+        assertEquals(10, arr[0]);
     }
 
     @Test
@@ -42,11 +42,11 @@ class Stack02Test {
         Stack02 st = new Stack02();
         st.push(10);
         st.push(20);
-        assertEquals(20,st.pop());
-        assertEquals(10,st.pop());
+        assertEquals(20, st.pop());
+        assertEquals(10, st.pop());
 
         //예외 테스트
-        assertThrows(RuntimeException.class,() ->{
+        assertThrows(RuntimeException.class, () -> {
             st.pop();
         });
     }
@@ -54,14 +54,15 @@ class Stack02Test {
     //peek테스트
     @Test
     void peek() {
-
         Stack02 st = new Stack02();
-        assertThrows(RuntimeException.class,() ->{
+        Integer[] arr = st.getArr();
+        assertThrows(RuntimeException.class, () -> {
             st.peek();
         });
         st.push(10);
+        assertEquals(10, arr[0]);
         int peeked = st.peek();
-        assertEquals(10,peeked);
+        assertEquals(10, peeked);
     }
 
 

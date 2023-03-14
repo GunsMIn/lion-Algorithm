@@ -10,7 +10,6 @@ public class Solution2 {
     public int[] solution(int[] arr, int divisor) {
         int[] answer = {};
         ArrayList<Integer> list = new ArrayList<>();
-
         //arr의 숫자배열에서 divisor 값으로 나누어 떨어지는 숫자를 반환
         //우선 반복문을 돌려야한다.
         for (int i = 0; i < arr.length; i++) {
@@ -21,8 +20,8 @@ public class Solution2 {
         if (list.isEmpty()) {
             list.add(-1);
         }
-
-        return  list.stream().sorted(Comparator.naturalOrder()).mapToInt(Integer::intValue).toArray();
-
+        return list.stream().sorted(Comparator.naturalOrder()).mapToInt(Integer::intValue).toArray();
     }
+
+
 }

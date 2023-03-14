@@ -9,7 +9,7 @@ public class Prime {
     소수 판별*/
     public boolean isPrime(int num) {
         for (int i = 2; i < num; i++) {
-            if(num%i==0) return false;
+            if (num % i == 0) return false;
         }
         //나머지가 0이 아니라는 얘기는 나누어 떨어지지 않는다는 말 -> 소수
         return true;
@@ -20,7 +20,7 @@ public class Prime {
     예를들어 80이란 숫자에서 자기자신을 제외하고 절반을 초과하는 숫자에서 나눴을때 나머지가 0이되는 숫자는 나올수가 없다.
     해당 풀이를 사용하면 최대 N/2번 조회를 한다*/
     public boolean isprimeV2(int num) {
-        for (int i = 2; i < num/2; i++) {
+        for (int i = 2; i < num / 2; i++) {
             if (num % i == 0) {
                 return false;
             }
@@ -28,11 +28,12 @@ public class Prime {
         return true;
     }
 
+    // 모든 약수는 대칭 형태를 갖는다.
     // 3. 루트판별법 예를 들어서 1:80, 2:40, 4:20, 5:16, 8:10. √80의 값은 대략 8.xxx의 값이 나온다.
     // 즉 약수들의 곱으로 봤을때 루트를 씌운 값이 중간값이 된다.
     // 이 원리는 이용하여 2에서부터 √N의 값까지 검색을한다며 이후의 값은 확인할 필요가 없게 된
     public boolean isPrimeV3(int num) {
-        for (int i = 2; i*i < num ; i++) {
+        for (int i = 2; i * i < num; i++) {
             if (num % i == 0) {
                 return false;
             }

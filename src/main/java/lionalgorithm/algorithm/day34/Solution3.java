@@ -14,7 +14,7 @@ public class Solution3 {
         int length = s.length();
         if (length % 2 == 0) {
             answer += s.substring(length / 2 - 1, length / 2 + 1);
-        }else{
+        } else {
             //2.5여도 int면 소수점 버려진다.
             answer += s.substring(length / 2, length / 2 + 1);
         }

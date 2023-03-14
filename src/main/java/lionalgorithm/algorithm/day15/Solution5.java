@@ -8,9 +8,9 @@ public class Solution5 {
         //absolutes에는 숫자배열이 들어있다
         //signs true를 만나면 양수 false를 만나면 음수이다.
         for (int i = 0; i < absolutes.length; i++) {
-            if(signs[i]==false){
+            if (signs[i] == false) {
                 int fv = absolutes[i] * -1;
-                answer +=fv;
+                answer += fv;
                 continue;
             }
             answer += absolutes[i];

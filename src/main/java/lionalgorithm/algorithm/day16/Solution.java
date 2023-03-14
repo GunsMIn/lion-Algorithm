@@ -16,9 +16,9 @@ public class Solution {
         int[] cnt = new int[3];
 
         for (int i = 0; i < answers.length; i++) {
-            if(answers[i]==a[i%a.length])cnt[0]++;
-            if(answers[i]==b[i%b.length])cnt[1]++;
-            if(answers[i]==c[i%c.length])cnt[2]++;
+            if (answers[i] == a[i % a.length]) cnt[0]++;
+            if (answers[i] == b[i % b.length]) cnt[1]++;
+            if (answers[i] == c[i % c.length]) cnt[2]++;
         }
 
         //최대값 구하기
@@ -31,7 +31,6 @@ public class Solution {
 
         return answer.stream().mapToInt(Integer::intValue).toArray();
     }
-
 
 
 }

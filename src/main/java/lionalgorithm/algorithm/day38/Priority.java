@@ -3,6 +3,7 @@ package lionalgorithm.algorithm.day38;
 import java.util.PriorityQueue;
 
 public class Priority {
+    //https://school.programmers.co.kr/learn/courses/30/lessons/42626
 
     public int solution(int[] scoville, int K) {
         int answer = 0; // count
@@ -12,15 +13,15 @@ public class Priority {
             pq.add(s);
         }
 
-        //모든 음식의 스코빌 지수를 K 이상으로 만든다
+        //모든 음식의 스코빌 지수를 K 이상으로 만든다 그렇기 위해서는 peek한 값이 k보다 작을때까지 진행!
         while (pq.peek() < K) {
             //런타임 에러가 발생 했던이유는 1개 밖에 없는데 2개를 poll하려고 했기 때문이다.
-            if(pq.size()<=1) return -1;
+            if (pq.size() <= 1) return -1;
             int firstValue = pq.poll();
             int secondValue = pq.poll();
-            int mix = firstValue + (secondValue*2);
+            int mix = firstValue + (secondValue * 2);
             pq.offer(mix);
-            answer ++;
+            answer++;
         }
 
         System.out.println("pq = " + pq);

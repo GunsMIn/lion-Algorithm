@@ -12,9 +12,9 @@ public class Print1To100 {
     3.언제 끝낼 것인지
      */
     public static void print1To100(int n) {
-        if(n > 100) return; // 탈출 조건
+        if (n > 100) return; // 탈출 조건
         System.out.println(n);
-        print1To100(n+1);
+        print1To100(n + 1);
     }
 
     public static void main(String[] args) {

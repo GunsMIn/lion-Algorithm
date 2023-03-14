@@ -12,7 +12,7 @@ public class Solution4 {
         Arrays.sort(lottos); //내가 찍은 로또 번호
         Arrays.sort(win_nums); // 결과 로또 번호
 
-        for (int myLotto:lottos) {
+        for (int myLotto : lottos) {
             if (myLotto == 0) {
                 zeroCnt++;
                 continue;
@@ -27,12 +27,12 @@ public class Solution4 {
         int max = correctCnt + zeroCnt;
         int min = correctCnt;
 
-        for(int i = 0; i < 2; i++) {
-            if(answer[i] == 6) answer[i] = 1;
-            else if(answer[i] == 5) answer[i] = 2;
-            else if(answer[i] == 4) answer[i] = 3;
-            else if(answer[i] == 3) answer[i] = 4;
-            else if(answer[i] == 2) answer[i] = 5;
+        for (int i = 0; i < 2; i++) {
+            if (answer[i] == 6) answer[i] = 1;
+            else if (answer[i] == 5) answer[i] = 2;
+            else if (answer[i] == 4) answer[i] = 3;
+            else if (answer[i] == 3) answer[i] = 4;
+            else if (answer[i] == 2) answer[i] = 5;
             else answer[i] = 6;
         }
 

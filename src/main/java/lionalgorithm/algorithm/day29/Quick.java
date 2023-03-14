@@ -1,49 +1,46 @@
 package lionalgorithm.algorithm.day29;
 
+import java.util.Arrays;
+
 public class Quick {
-    public int[] sort(int[] arr,int startIdx,int endIdx) {
-        int pivot = arr[arr.length/2];
-        System.out.println("pivot = " + pivot);
-        int leftIdx = 0; // 맨 왼쪽 인덱스의 시작점
-        int rightIdx = arr.length -1; // 맨 오른쪽 인덱스의 시작점
+    //https://gwang920.github.io/algorithm%20non%20ps/qucikSort/
+    public int[] sort(int[] arr, int startIdx, int endIdx) {
+        int leftIdx = startIdx;
+        int rightIdx = endIdx;
+        int pivot = arr[(startIdx + endIdx) / 2];
+        // 언제까지 반복되는지? leftIdx == rightIdx일 때도 아래 로직이 반복됨
+        // ex) leftIdx = 3, rightIdx = 3일 때도
+        // 왼쪽과 오른쪽 각각 교환할 index를 정하는 부분 pivot까지 올 수도 있다.
+        while (leftIdx <= rightIdx) {
+            while (arr[leftIdx] < pivot) leftIdx += 1;   // <=아닙니다.
+            while (arr[rightIdx] > pivot) rightIdx -= 1;   // <=아닙니다.
+            // leftIdx = 4, rightIdx = 7 그대로 왜 냐하면 25는 교환 대상이기 때문입니다.
 
-        //leftIdx가 rightIdx보다 크거나 같다면 엇갈린것이어서 정렬을 멈춰야 한다.
-        if (leftIdx >= rightIdx) return;
-
-        //{20, 60, 5, 19, 40(p), 50, 5, 25};
-        while (leftIdx <= rightIdx) { // 두 인덱스가 서로 교차할 때 까지 반복시키기 위해서!
-            while (arr[leftIdx] < pivot) { // 피봇에 도달할때 까지
-                // 왼쪽의 영역이 피봇보다 작다면 index만 증가시켜줘서 다음값 비교하게해주자
-                // // 피봇 아래에있는 값중 큰 값을 고르기위함
-                leftIdx++;
-            }
-            while (arr[rightIdx] > pivot) {// 피봇에 도달할때 까지
-                // 오른쪽의 영역이 피봇보다 크다면 index만 감소시켜서 이전값을 비교하게해주자
-                // 피봇 위에있는 값중 작은 값을 고르기위함
-                rightIdx--;
-            }
-
-            //교환
-            //{20, 60(s), 5, 19, 40(p), 50, 5, 25(s)} -> {20, 25(s), 5, 19, 40(p), 50, 5, 60(s)} 만들어 주기 위함
             if (leftIdx <= rightIdx) {
-                //예를들어서 여기에는 arr[leftIdx]는 60 그리고 arr[rightIdx]에는 25가 있고 교환해주어야한다.
                 int temp = arr[leftIdx];
                 arr[leftIdx] = arr[rightIdx];
                 arr[rightIdx] = temp;
-                //교환 후에는 왼쪽인덱스는 +1 오른쪽인덱스는 -1을 해줘야한다.
-                leftIdx++;
-                rightIdx--;
+                leftIdx += 1;
+                rightIdx -= 1;
             }
-    }
-    
-    public static void pivotSort(int[] ar, int leftIdx , int rightIdx) {
-            sort(arr,leftIdx,rightIdx);
+            System.out.printf("leftIdx:%d rightIdx:%d\n", leftIdx, rightIdx);
+            System.out.println(Arrays.toString(arr));
         }
-    }
+        // 교환이 모두 끝나면 왼쪽, 오른쪽 두 그룹으로 나누어 지면 됩니다.
+        // 20, 18, 5, 19, 25, 5, 50, 40
 
+        //위에서 leftIdx와 rightidx의 위치가 바뀜
+        if (startIdx < rightIdx) sort(arr, startIdx, rightIdx);
+        if (leftIdx < endIdx) sort(arr, leftIdx, endIdx);
+
+        return arr;
+    }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{20, 60, 5, 19, 40, 50, 5, 25};
-        Quick.pivotSort(arr,0,0);
+        var arr = new int[]{20, 18, 5, 19, 40, 50, 5, 25};
+        Quick stt = new Quick();
+        var r = stt.sort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(r));
     }
+
 }

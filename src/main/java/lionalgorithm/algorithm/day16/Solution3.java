@@ -15,9 +15,6 @@ public class Solution3 {
     }
 
 
-
-
-
     public static void main(String[] args) {
 
         Solution3 s = new Solution3();

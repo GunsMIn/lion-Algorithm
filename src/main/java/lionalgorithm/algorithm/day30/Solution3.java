@@ -18,13 +18,12 @@ public class Solution3 {
             } else if (idx % 2 == 0) {
                 str[i] = str[i].toUpperCase();
                 idx++;
-            }else{
+            } else {
                 str[i] = str[i].toLowerCase();
                 idx++;
             }
             answer += str[i];
         }
-
 
 
         return answer;

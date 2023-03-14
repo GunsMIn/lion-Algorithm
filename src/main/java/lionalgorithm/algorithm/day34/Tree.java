@@ -2,16 +2,17 @@ package lionalgorithm.algorithm.day34;
 
 public class Tree {
 
-    /**부모가 같을때까지 부모를 찾으면서
+    /**
+     * 부모가 같을때까지 부모를 찾으면서
      * 한칸 올라갈때마다 +1을 하는 방식으로 거리를 구한다..
      */
 
-    public static int goUp(int a,int b) {
+    public static int goUp(int a, int b) {
         if (a > b) {
             return goUp(a / 2, b) + 1; // a를 부모 쪽으로
         } else if (a < b) {
             return goUp(a, b / 2) + 1; // b를 부모 쪽으로
-        } else{ // a==b
+        } else { // a==b
             return 0;
         }
     }

@@ -11,7 +11,7 @@ public class Solution5 {
             max_v = Math.max(max_v, Math.max(size[0], size[1]));
             max_h = Math.max(max_h, Math.min(size[0], size[1]));
         }
-        int answer = max_v *max_h;
+        int answer = max_v * max_h;
         return answer;
     }
 
@@ -20,7 +20,7 @@ public class Solution5 {
         int max_w = 0;//가로 중 가장 긴
         int max_h = 0;//세로 중 가장
         int answer = 0;
-        
+
         for (int i = 0; i < sizes.length; i++) {
             int temp = 0;
             for (int j = 0; j < sizes[i].length; j++) {

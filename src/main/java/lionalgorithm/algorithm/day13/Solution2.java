@@ -14,18 +14,18 @@ public class Solution2 {
         int[] cnt = new int[3];
 
         for (int i = 0; i < answers.length; i++) {
-            if(answers[i]==a[i%a.length]) cnt[0]++;
-            if(answers[i]==b[i%b.length]) cnt[1]++;
-            if(answers[i]==c[i%c.length]) cnt[2]++;
+            //정답과 각 찍은 답을 하나하나씩 비교!
+            if (answers[i] == a[i % a.length]) cnt[0]++;
+            if (answers[i] == b[i % b.length]) cnt[1]++;
+            if (answers[i] == c[i % c.length]) cnt[2]++;
         }
 
         int maxCnt = Math.max(cnt[0], Math.max(cnt[1], cnt[2]));
 
         ArrayList<Integer> list = new ArrayList<>();
-        if(maxCnt == cnt[0])list.add(1);
-        if(maxCnt == cnt[1])list.add(2);
-        if(maxCnt == cnt[2])list.add(3);
-
+        if (maxCnt == cnt[0]) list.add(1);
+        if (maxCnt == cnt[1]) list.add(2);
+        if (maxCnt == cnt[2]) list.add(3);
 
 
         return list.stream().mapToInt(Integer::intValue).toArray();

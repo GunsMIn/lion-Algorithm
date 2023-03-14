@@ -3,15 +3,14 @@ package lionalgorithm.algorithm.day37;
 public class Solution {
 
     public int[] getChildrenIndex(int parentIdx) {
-        int leftIdx = 2 * parentIdx +1; // 왼쪽 노드
-        int rightIdx = 2 * parentIdx +2; // 오른쪽 노드
-        return new int[]{leftIdx,rightIdx};
+        int leftIdx = 2 * parentIdx + 1; // 왼쪽 노드
+        int rightIdx = 2 * parentIdx + 2; // 오른쪽 노드
+        return new int[]{leftIdx, rightIdx};
 
 
     }
 
-    public int solution(int [][]board)
-    {
+    public int solution(int[][] board) {
         //1.기준점에서 왼쪽 ,위쪽, 왼쪽 대각선 위의 현재숫자를 찾는다
         //2.not 0이면 3개의 방향중에 최소인숫자에 +1을 해서 저장
         //3.저장된 숫자는 가장 큰 정사각형의 한변이 될 것이다.
@@ -20,7 +19,7 @@ public class Solution {
         int answer = 0;
         int height = board.length;
         int width = board[0].length;
-        int[][] temp = new int[height+1][width+1];
+        int[][] temp = new int[height + 1][width + 1];
 
         //배열을 복사할 것이다.
         for (int i = 0; i < height; i++) {
@@ -40,7 +39,7 @@ public class Solution {
         }
 
 
-        return answer*answer; //최대 넓이 =최대길이 *최대길이
+        return answer * answer; //최대 넓이 =최대길이 *최대길이
 
     }
 }

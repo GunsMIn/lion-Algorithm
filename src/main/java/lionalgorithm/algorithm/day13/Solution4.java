@@ -16,7 +16,7 @@ public class Solution4 {
         int size = set.size();
         if (max < size) {
             answer = max;
-        }else{
+        } else {
             answer = size;
         }
 

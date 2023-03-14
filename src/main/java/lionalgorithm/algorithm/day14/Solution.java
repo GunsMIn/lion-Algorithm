@@ -11,7 +11,7 @@ public class Solution {
         int[] answer = new int[prices.length];
 
         Stack<Integer> stack = new Stack<>();
-        for (int i = 0; i <prices.length ; i++) {
+        for (int i = 0; i < prices.length; i++) {
             while (!stack.isEmpty() && prices[i] < prices[stack.peek()]) {
                 answer[stack.peek()] = i - stack.peek(); //stack.peek()에서는 전에 들어갔던 배열의 index번호가 있을것!
                 stack.pop();

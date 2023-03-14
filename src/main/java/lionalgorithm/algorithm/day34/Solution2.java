@@ -16,10 +16,10 @@ public class Solution2 {
         int pCount = 0;
         int yCount = 0;
         for (char c : s.toCharArray()) {
-            if(c=='p') pCount++;
-            else if(c=='y') yCount++;
+            if (c == 'p') pCount++;
+            else if (c == 'y') yCount++;
         }
-        if (pCount!=yCount) return false;
+        if (pCount != yCount) return false;
 
         return answer;
     }

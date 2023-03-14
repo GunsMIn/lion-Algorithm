@@ -9,14 +9,14 @@ public class PrintStar {
     //별찍기
     //1.반복할 메소드 만들기
     static void printNum(int num) {
-        if(num==0) return; // 탈출 조건
-        System.out.printf("%s","*");
+        if (num == 0) return; // 탈출 조건
+        System.out.printf("%s", "*");
         printNum(num - 1);
     }
 
-    static String  printNums(int num) {
-        if(num==0) return "";
-        return "*" + printNums(num-1);
+    static String printNums(int num) {
+        if (num == 0) return "";
+        return "*" + printNums(num - 1);
     }
 
     public static void main(String[] args) throws IOException {

@@ -9,13 +9,14 @@ public class QuickSort2 {
         List<Integer> answer = new ArrayList<>();
         answer.addAll(left);
         answer.addAll(mid);
-        answer.addAll(right);        return answer;
+        answer.addAll(right);
+        return answer;
     }
 
     public List<Integer> sort(List<Integer> arr) {
 
 
-        if(arr.size() <= 1) return arr;
+        if (arr.size() <= 1) return arr;
 
         // 1. 기준값 뽑는 로직 구현
         int pivot = arr.get(arr.size() / 2); // 5
@@ -26,7 +27,7 @@ public class QuickSort2 {
         List<Integer> mid = new ArrayList<>();
 
         for (int i = 0; i < arr.size(); i++) {
-            if(pivot > arr.get(i)) left.add(arr.get(i));
+            if (pivot > arr.get(i)) left.add(arr.get(i));
             else if (pivot < arr.get(i)) right.add(arr.get(i));
             else mid.add(arr.get(i));
         }
@@ -45,4 +46,5 @@ public class QuickSort2 {
         }
         QuickSort2 qs = new QuickSort2();
         qs.sort(al);
-    }}
+    }
+}

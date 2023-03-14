@@ -17,12 +17,11 @@ public class Solution {
             set.add(num); // 중복제거
         }
         int size = set.size();
-        if (max < size) {
+        if (max < size) { // 중복을 제거한 set의 크기가 nums의 배열 /2 보다 크면 선택할 수 있는 것은 배열의 /2 값이다
             answer = max;
-        }else{
+        } else { //size가 max보다 작을 때
             answer = size;
         }
-
         return answer;
     }
 

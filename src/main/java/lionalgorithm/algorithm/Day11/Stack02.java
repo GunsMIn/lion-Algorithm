@@ -40,6 +40,6 @@ public class Stack02 {
         if (this.isEmpty()) {
             throw new RuntimeException("스택이 비어있습니다");
         }
-        return arr[top];
+        return arr[top - 1];
     }
 }

@@ -8,7 +8,7 @@ public class GetSum {
 
     //자릿수의 합구하기
     public static int sumOfDigit(int q) {
-        if(q==0) return 0;
+        if (q == 0) return 0;
         return q % 10 + sumOfDigit(q / 10);
     }
 

@@ -6,10 +6,15 @@ import java.io.InputStreamReader;
 
 public class Factorial {
 
+    //팩토리얼
     public static int factor(int num) {
-        if(num==1) return 1;
-
+        if (num == 1) return 1;
         return num * factor(num - 1);
+    }
+
+    public static int factoraial(int num) {
+        if (num == 1) return 1;
+        return num * factoraial(num - 1);
     }
 
     public static void main(String[] args) throws IOException {

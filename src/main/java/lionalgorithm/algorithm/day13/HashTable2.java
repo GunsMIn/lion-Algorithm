@@ -22,10 +22,10 @@ public class HashTable2 {
     }
 
     //add메소드
-    public void add(String key,Integer value) {
+    public void add(String key, Integer value) {
         int hashNum = hash(key);
         table[hashNum] = value;
-        System.out.println(key+"님은" + hashNum+" 방의 저장된 값은 " + table[hashNum] + "입니다");
+        System.out.println(key + "님의 " + hashNum + " 방에 저장된 값은 " + table[hashNum] + "입니다");
     }
 
     public int search(String key) {
@@ -53,8 +53,6 @@ public class HashTable2 {
             ht.add(names[i], ht.hash(names[i]));
         }
 
-        
-
 
         //아스키코드의 총합의 중복을 제거하기위해서
       /*  Set<Integer> nameSet = new HashSet<>();
@@ -66,10 +64,7 @@ public class HashTable2 {
         System.out.printf("%s %s",names.length,nameSet.size());*/
 
 
-
-
     }
-
 
 
 }

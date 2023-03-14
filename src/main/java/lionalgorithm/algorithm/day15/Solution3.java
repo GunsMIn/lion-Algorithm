@@ -15,9 +15,9 @@ public class Solution3 {
         Arrays.sort(win_nums);
         //0,0,1,25,31,44
         //1,6,10,19,31,45
-        for (int i = 0; i <lottos.length ; i++) {
-            if(lottos[i]==0) {
-                zeroCnt ++;
+        for (int i = 0; i < lottos.length; i++) {
+            if (lottos[i] == 0) {
+                zeroCnt++;
                 continue;
             }
             for (int j = 0; j < lottos.length; j++) {
@@ -35,11 +35,11 @@ public class Solution3 {
 
     public static int getRank(int n) {
         switch (n) {
-            case 6 :
+            case 6:
                 return 1;
             case 5:
                 return 2;
-            case 4 :
+            case 4:
                 return 3;
             case 3:
                 return 4;
@@ -56,6 +56,6 @@ public class Solution3 {
     public static void main(String[] args) {
 
         Solution3 s = new Solution3();
-        
+
     }
 }
