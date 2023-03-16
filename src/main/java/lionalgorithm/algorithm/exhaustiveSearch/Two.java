@@ -14,6 +14,7 @@ public class Two {
 
         // 정답 배열과 각 수포자들의 찍는 패턴을 비교하여 맞힌 문제 수를 계산
         for (int i = 0; i < answers.length; i++) {
+            //인덱스 반복하기 위해서 %(나머지연산자) 사용
             if (answers[i] == person1[i % 5]) {
                 correctCount[0]++;
             }
